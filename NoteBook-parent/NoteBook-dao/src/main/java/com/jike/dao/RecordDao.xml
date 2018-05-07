@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jike.dao.RecordDao">
+	<select id="getById" resultType="Record" parameterType="Integer">
+		select
+		*
+		from tb_record
+		where id = #{id}
+	</select>
+	<select id="getByUid" resultType="Record"
+		parameterType="Integer">
+		select
+		*
+		from tb_record
+		where uid = #{uid}
+	</select>
+	<select id="getByUidAndMark" resultType="Record"
+		parameterType="Record">
+		select
+		*
+		from tb_record
+		where uid = #{uid} and mark=#{mark}
+	</select>
+	<insert id="insertRecord" parameterType="Record">
+		insert
+		into
+		tb_record(uid,rtime,text,mark)
+		values(#{uid},#{rtime},#{text},#{mark})
+	</insert>
+	<update id="updateRecord" parameterType="Record">
+		update tb_record
+		set
+		rtime=#{rtime},text=#{text},mark=#{mark},sign=#{sign}
+		where
+		id=#{id} and
+		uid=#{uid}
+	</update>
+</mapper>
