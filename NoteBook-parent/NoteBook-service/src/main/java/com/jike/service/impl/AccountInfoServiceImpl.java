@@ -27,7 +27,7 @@ public class AccountInfoServiceImpl implements AccountInfoService {
 	public AccountInfo register(AccountInfo accountInfo) {
 		AccountInfo byAccount = accountInfoDao.getByAccount(accountInfo.getAccount());
 		if (byAccount == null) {
-			Integer registerAccount = accountInfoDao.insertAccountInfo(accountInfo);
+			accountInfoDao.insertAccountInfo(accountInfo);
 			return accountInfo;
 		}
 		return null;
@@ -35,7 +35,7 @@ public class AccountInfoServiceImpl implements AccountInfoService {
 
 	@Override
 	public AccountInfo modifyProfile(AccountInfo accountInfo) {
-		Integer modifyprofile=accountInfoDao.updateAccountInfo(accountInfo);
+		accountInfoDao.updateAccountInfo(accountInfo);
 		AccountInfo byid=accountInfoDao.getById(accountInfo.getId());
 		return byid;
 	}
