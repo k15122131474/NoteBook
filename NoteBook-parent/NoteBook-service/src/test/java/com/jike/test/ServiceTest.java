@@ -1,28 +1,46 @@
 package com.jike.test;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.jike.dao.AccountInfoDao;
-import com.jike.entity.AccountInfo;
-import com.jike.service.AccountInfoService;
-import com.jike.service.impl.AccountInfoServiceImpl;
+import com.jike.entity.PicInfo;
+import com.jike.entity.RecordInfo;
+import com.jike.entity.UserInfo;
+import com.jike.service.PicInfoService;
+import com.jike.service.RecordInfoService;
+import com.jike.service.UserInfoService;
 
 public class ServiceTest {
 	@Test
-	public void testAccountInfoService() throws Exception {
+	public void testUserInfoService() throws Exception {
 		ApplicationContext ac = new ClassPathXmlApplicationContext(
 				new String[] { "applicationContext-dao.xml", "applicationContext-service.xml" });
+		UserInfoService bean = ac.getBean(UserInfoService.class);
+		UserInfo byId = bean.register(new UserInfo());
+		System.out.println(byId);
+		((ClassPathXmlApplicationContext) ac).close();
+	}
 
-		AccountInfoService accountInfoService = ac.getBean(AccountInfoService.class);
-		accountInfoService.login(new AccountInfo("111", "333"));
-		accountInfoService.register(new AccountInfo("444", "444", "555"));
-		accountInfoService.modifyProfile(new AccountInfo("jj", "333", "555"));
-		// ApplicationContext ac = new
-		// ClassPathXmlApplicationContext("applicationContext-dao.xml");
-		//
-		// AccountInfoDao accountInfoDao = ac.getBean(AccountInfoDao.class);
-		// accountInfoDao.insertAccountInfo(new AccountInfo("444", "444", "555"));
+	@Test
+	public void testRecordInfoService() throws Exception {
+		ApplicationContext ac = new ClassPathXmlApplicationContext(
+				new String[] { "applicationContext-dao.xml", "applicationContext-service.xml" });
+		RecordInfoService bean = ac.getBean(RecordInfoService.class);
+		RecordInfo byId = bean.saveRecord(new RecordInfo());
+		System.out.println(byId);
+		((ClassPathXmlApplicationContext) ac).close();
+	}
+
+	@Test
+	public void testPicInfoService() throws Exception {
+		ApplicationContext ac = new ClassPathXmlApplicationContext(
+				new String[] { "applicationContext-dao.xml", "applicationContext-service.xml" });
+		PicInfoService bean = ac.getBean(PicInfoService.class);
+		List<PicInfo> byId = bean.getByRid(1);
+		System.out.println(byId);
+		((ClassPathXmlApplicationContext) ac).close();
 	}
 }

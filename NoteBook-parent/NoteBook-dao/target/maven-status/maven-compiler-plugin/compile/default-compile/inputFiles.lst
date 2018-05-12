@@ -1,4 +1,6 @@
-D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\dao\AccountInfoDao.java
-D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\dao\RecordDao.java
-D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\entity\AccountInfo.java
-D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\entity\Record.java
+D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\entity\UserInfo.java
+D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\entity\PicInfo.java
+D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\dao\PicInfoDao.java
+D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\dao\RecordInfoDao.java
+D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\entity\RecordInfo.java
+D:\GitHub\R3\NoteBook\NoteBook-parent\NoteBook-dao\src\main\java\com\jike\dao\UserInfoDao.java
